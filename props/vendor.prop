@@ -213,6 +213,9 @@ ro.mediaserver.64b.enable=true
 # Mitee
 vendor.mseccam.auto.start=false
 
+# Perf
+ro.vendor.extension_library=libqti-perfd-client.so
+
 # QCOM
 ro.soc.manufacturer=QTI
 
