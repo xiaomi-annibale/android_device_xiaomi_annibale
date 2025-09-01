@@ -303,6 +303,7 @@ PRODUCT_PACKAGES += \
     LineageApertureOverlay \
     LineageSDKOverlay \
     LineageSettingsOverlay \
+    NfcOverlay \
     SecureElementResTarget \
     SettingsResCommon \
     SettingsResXiaomi \
