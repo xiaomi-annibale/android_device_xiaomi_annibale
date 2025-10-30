@@ -32,6 +32,7 @@ from extract_utils.utils import (
 )
 
 namespace_imports = [
+    'device/xiaomi/annibale',
     'hardware/qcom-caf/sm8750',
     'hardware/qcom-caf/wlan',
     'hardware/xiaomi',
