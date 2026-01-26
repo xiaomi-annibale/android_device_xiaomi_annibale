@@ -745,6 +745,9 @@ on property:sys.boot_completed=1
     wait /sys/class/thermal/thermal_message/boot_complete
     write /sys/class/thermal/thermal_message/boot_complete 2
 
+    # Enable PowerHAL hint processing
+    setprop vendor.powerhal.init 1
+
 service mi-serial-sh /odm/bin/init.mi.serial.sh
     class late_start
     user root
