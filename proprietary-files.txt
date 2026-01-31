@@ -3046,11 +3046,9 @@ vendor/lib64/libspcom.so
 odm/lib64/hw/consumerir.qcom.so
 
 # Media
-vendor/bin/hw/android.hardware.media.c2-mi-service
 vendor/bin/hw/vendor.qti.media.c2@1.0-service
 vendor/bin/hw/vendor.qti.media.c2audio@1.0-service
 vendor/bin/init.qti.media.sh
-vendor/etc/init/android.hardware.media.c2-mi-service.rc
 vendor/etc/init/init.qti.media.rc
 vendor/etc/init/vendor.qti.media.c2@1.0-service.rc
 vendor/etc/init/vendor.qti.media.c2audio@1.0-service.rc
@@ -3058,17 +3056,11 @@ vendor/etc/seccomp_policy/codec2.vendor.base-arm64.policy
 vendor/etc/seccomp_policy/codec2.vendor.ext-arm64.policy
 vendor/etc/vintf/manifest/c2_manifest_vendor.xml
 vendor/etc/vintf/manifest/c2_manifest_vendor_audio.xml
-vendor/etc/vintf/manifest/media_c2_mi.xml
 vendor/lib64/libAlacSwDec.so
 vendor/lib64/libApeSwDec.so
 vendor/lib64/libEvrcSwCodec.so
 vendor/lib64/libFlacSwDec.so
 vendor/lib64/libQcelp13SwCodec.so
-vendor/lib64/libcodec2_soft_aivc_dec.so
-vendor/lib64/libcodec2_soft_aivc_enc.so
-vendor/lib64/libcodec2_soft_mihc_dec.so
-vendor/lib64/libcodec2_soft_mihc_enc.so
-vendor/lib64/libcodec2_store_mi.so
 vendor/lib64/libcodecclientmanager.so
 vendor/lib64/libdsd2pcm.so
 vendor/lib64/libqc2audio_base.so

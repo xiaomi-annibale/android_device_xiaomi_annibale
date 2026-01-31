@@ -25,7 +25,6 @@ xiaomi.system.hypsys.common.IHypSysSsi/default u:object_r:hal_hypsys_vendor_serv
 xiaomi.system.hypsys.common.IHypSysSsiIntl/default u:object_r:hal_hypsys_vendor_service:s0
 
 # Media
-android.hardware.media.c2.IComponentStore/xiaomi u:object_r:hal_codec2_service:s0
 vendor.xiaomi.hardware.mediaeventgatherservice.IMediaGather/default                       u:object_r:hal_mediaeventgatherservice_service:s0
 
 # Mlipay
