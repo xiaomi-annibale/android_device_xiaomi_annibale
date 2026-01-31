@@ -4,7 +4,7 @@
 //
 
 cc_binary {
-    name: "xiaomi.system.hypsys.common-service",
+    name: "xiaomi.system.hypsys.common-service-dummy",
     srcs: ["service.cpp"],
     vendor: true,
     relative_install_path: "hw",
@@ -13,6 +13,6 @@ cc_binary {
         "libbinder_ndk",
         "xiaomi.system.hypsys.common-V1-ndk",
     ],
-    vintf_fragments: ["xiaomi.system.hypsys.common-service.xml"],
-    init_rc: ["xiaomi.system.hypsys.common-service.rc"],
+    vintf_fragments: ["xiaomi.system.hypsys.common-service-dummy.xml"],
+    init_rc: ["xiaomi.system.hypsys.common-service-dummy.rc"],
 }

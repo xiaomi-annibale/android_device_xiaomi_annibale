@@ -1,4 +1,4 @@
-service xiaomi.system.hypsys.common-service /vendor/bin/hw/xiaomi.system.hypsys.common-service
+service xiaomi.system.hypsys.common-service /vendor/bin/hw/xiaomi.system.hypsys.common-service-dummy
     class hal
     user system
     group system

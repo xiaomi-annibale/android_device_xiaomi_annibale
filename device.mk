@@ -206,7 +206,7 @@ PRODUCT_PACKAGES += \
 
 # Hypsy
 PRODUCT_PACKAGES += \
-    xiaomi.system.hypsys.common-service
+    xiaomi.system.hypsys.common-service-dummy
 
 # HWUI
 TARGET_USES_VULKAN := true
