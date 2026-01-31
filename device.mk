@@ -86,6 +86,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.audio.core.sounddose-V1-ndk.vendor \
     libalsautilsv2.vendor \
+    libaudioaidlcommon.vendor \
     libaudioutils_shim \
     libaudio_aidl_conversion_common_ndk.vendor \
     libmediautils_vendor.vendor \
@@ -152,10 +153,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/display/display_id_4630947238302509459.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630947238302509459.xml
-
-# Dolby
-PRODUCT_PACKAGES += \
-    XiaomiDolby
 
 # DRM
 PRODUCT_PACKAGES += \

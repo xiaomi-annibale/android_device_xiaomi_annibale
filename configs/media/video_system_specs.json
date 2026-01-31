@@ -112,17 +112,10 @@
             [8640, 32420, 245]
          ],
 
-         "DolbyVision": {
-             "profiles": [5, 8],
-             "max_main_tier_level": 12,
-             "max_high_tier_level": 12
-         },
-
         // list of codec plugin libraries to be loaded into codec registry
         "QC2CodecPlugins": [
             "libqc2vppfilter.so",
             "libqcodec2_imgtxrfilter.so",
-            "libqcodec2_dolbydecoderfilter.so",
             "libqcodec2_srfilter.so",
             // "libqcodec2_psfilter.so",
             "libqcodec2_rffilter.so"
@@ -133,7 +126,6 @@
             "libqcodec2_cvpfilter.so",
             "libqcodec2_streaminteg_filter.so",
             // "libqcodec2_videofrcfilter.so",
-            "libqcodec2_dolbyencoderfilter.so",
             "libqcodec2_roiencfilter.so"
         ],
 
@@ -152,9 +144,6 @@
         // "c2.qti.dv.encoder"
         //
         "OptionalCodecs": [
-            "c2.qti.dv.decoder",
-            "c2.qti.dv.decoder.secure"
-            //"c2.qti.dv.encoder"
         ]
     }
 }

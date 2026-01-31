@@ -177,6 +177,9 @@ blob_fixups: blob_fixups_user_type = {
     'odm/etc/init/vendor.xiaomi.hw.touchfeature-service.rc': blob_fixup()
         .regex_replace(r'service touch-kmsg-init-sh\b[\s\S]*?\n(?=\S|$)', ''),
 
+    'vendor/etc/clstc_config_library.xml': blob_fixup()
+        .regex_replace(r'<library>\s*<name>libdolbyclstc[\s\S]*?</library>', ''),
+
     (
         'odm/lib64/camera/components/com.qti.node.dewarp.so',
         'odm/lib64/hw/com.qti.chi.override.so',

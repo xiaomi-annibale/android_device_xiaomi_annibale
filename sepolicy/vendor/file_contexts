@@ -67,11 +67,6 @@
 /dev/mi_display/disp_log u:object_r:vendor_displaylog_device:s0
 /sys/devices/virtual/mi_display/disp_feature/disp-DSI-+[0-1](/.*)? u:object_r:vendor_sysfs_displayfeature:s0
 
-# Dolby
-/odm/bin/hw/dvs-aidl-service u:object_r:dvs_aidl_default_exec:s0
-/vendor/bin/hw/vendor\.dolby\.dms\.service u:object_r:hal_aidl_dms_default_exec:s0
-/vendor/bin/hw/vendor\.dolby\.media\.c2-default-service-dax u:object_r:mediacodec_exec:s0
-
 # Fingerprint
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint-service\.xiaomi u:object_r:hal_fingerprint_default_exec:s0
 /data/vendor/fpc(/.*)? u:object_r:fingerprint_vendor_data_file:s0

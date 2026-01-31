@@ -17,11 +17,6 @@ vendor.xiaomi.sensor.citsensorservice.ICitSensorService/default u:object_r:vendo
 vendor.xiaomi.hardware.display.mihwcextension.IMiHwcExtension/default u:object_r:vendor_hal_hwcextension_xiaomi_service:s0
 vendor.xiaomi.hardware.displayfeature_aidl.IDisplayFeature/default u:object_r:vendor_hal_displayfeature_xiaomi_service:s0
 
-# Dolby
-android.hardware.media.c2.IComponentStore/default9 u:object_r:hal_codec2_service:s0
-vendor.dolby.dms.IDms/default u:object_r:hal_aidl_dms_service:s0
-vendor.dolby.dvs.IDvs/default u:object_r:dvs_aidl_service:s0
-
 # Fingerprint
 vendor.xiaomi.hardware.fx.tunnel.IMiFxTunnel/default u:object_r:vendor_hal_fingerprint_service_xiaomi:s0
 
