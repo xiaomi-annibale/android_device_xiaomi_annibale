@@ -3087,7 +3087,6 @@ vendor/lib64/qti.video.utils.videobufferlayout.so
 vendor/lib64/vendor.xiaomi.hardware.videoservice-V7-ndk.so
 
 # Media configs
-vendor/etc/media_codecs_mi_c2_audio.xml
 vendor/etc/media_codecs_performance_sun.xml
 vendor/etc/media_profiles_sun.xml
 
