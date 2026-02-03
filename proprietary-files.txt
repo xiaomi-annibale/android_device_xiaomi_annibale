@@ -3064,8 +3064,6 @@ vendor/lib64/libApeSwDec.so
 vendor/lib64/libEvrcSwCodec.so
 vendor/lib64/libFlacSwDec.so
 vendor/lib64/libQcelp13SwCodec.so
-vendor/lib64/lib_AIVC_decoder.so
-vendor/lib64/lib_AIVC_encoder.so
 vendor/lib64/libcodec2_soft_aivc_dec.so
 vendor/lib64/libcodec2_soft_aivc_enc.so
 vendor/lib64/libcodec2_soft_mihc_dec.so
@@ -3090,13 +3088,9 @@ vendor/lib64/libqcodec2_hooks.so
 vendor/lib64/libqcodec2_imgtxrfilter.so
 vendor/lib64/libqcodec2_mockfilter.so
 vendor/lib64/libqcodec2_platform.so
-vendor/lib64/libqcodec2_psfilter.so
-vendor/lib64/libqcodec2_rffilter.so
-vendor/lib64/libqcodec2_srfilter.so
 vendor/lib64/libqcodec2_streaminteg_filter.so
 vendor/lib64/libqcodec2_utils.so
 vendor/lib64/libqcodec2_v4l2codec.so
-vendor/lib64/libqcodec2_videofrcfilter.so
 vendor/lib64/libresourcemanager.so
 vendor/lib64/libsamplefilterplugin.so
 vendor/lib64/libvideoservice_utils.so
