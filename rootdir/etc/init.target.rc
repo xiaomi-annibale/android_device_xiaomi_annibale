@@ -716,6 +716,9 @@ service ufs_ffu_service /vendor/bin/sh /vendor/bin/ufs_ffu.sh
 on property:sys.boot_completed=1
     start ufs_ffu_service
 
+    # Set thermal mode to mgame
+    write /sys/devices/virtual/thermal/thermal_message/sconfig 19
+
 #for cts-on-gsi test
 on boot && property:ro.product.system.manufacturer=Android
     setprop debug.sf.set_idle_timer_ms 0
