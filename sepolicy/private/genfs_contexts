@@ -1,0 +1,2 @@
+# Touch
+genfscon proc /xm_htc_report_rate u:object_r:proc_touch_file:s0

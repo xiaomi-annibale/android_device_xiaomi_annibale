@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/touch_title">
+
+    <com.android.settingslib.widget.MainSwitchPreference
+        android:key="touch_high_sampling_rate"
+        android:title="@string/touch_high_sampling_rate_title"
+        android:enabled="false" />
+
+    <com.android.settingslib.widget.FooterPreference
+        android:title="@string/touch_high_sampling_rate_footer"
+        android:selectable="false" />
+
+</PreferenceScreen>
