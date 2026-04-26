@@ -1,2 +1,0 @@
-# Touch
-type proc_touch_file, fs_type, proc_type;

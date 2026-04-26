@@ -17,7 +17,6 @@ import android.os.Looper
 import android.os.UserHandle
 import android.provider.Settings
 import android.util.Log
-import com.xiaomi.settings.utils.FileUtils
 
 class TouchReportRateService : Service() {
 
@@ -75,11 +74,12 @@ class TouchReportRateService : Service() {
 
         const val SETTING_KEY = "touch_high_sampling_rate"
         private const val DEFAULT_VALUE = 0
-        private const val PROC_PATH = "/proc/xm_htc_report_rate"
-        private const val VALUE_NORMAL = "120"
-        private const val VALUE_HIGH = "240"
+        private const val TOUCH_ID = 0
 
-        fun isReportRateWritable(): Boolean = FileUtils.isFileWritable(PROC_PATH)
+        private const val MODE_GAME_MODE = 0
+        private const val MODE_ACTIVE_MODE = 202
+
+        fun isReportRateWritable(): Boolean = TouchFeatureWrapper.isServiceAvailable()
 
         fun applyReportRate(context: Context) {
             val value =
@@ -90,7 +90,14 @@ class TouchReportRateService : Service() {
                     UserHandle.USER_CURRENT,
                 )
             if (DEBUG) Log.d(TAG, "applyReportRate: $value")
-            FileUtils.writeLine(PROC_PATH, if (value == 1) VALUE_HIGH else VALUE_NORMAL)
+
+            if (value == 1) {
+                TouchFeatureWrapper.setModeValue(TOUCH_ID, MODE_GAME_MODE, 1)
+                TouchFeatureWrapper.setModeValue(TOUCH_ID, MODE_ACTIVE_MODE, 1)
+            } else {
+                TouchFeatureWrapper.setModeValue(TOUCH_ID, MODE_ACTIVE_MODE, 0)
+                TouchFeatureWrapper.setModeValue(TOUCH_ID, MODE_GAME_MODE, 0)
+            }
         }
 
         fun startService(context: Context) {

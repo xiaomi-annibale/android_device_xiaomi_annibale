@@ -16,5 +16,6 @@ android_app {
         "androidx.preference_preference",
         "org.lineageos.settings.resources",
         "vendor.xiaomi.hardware.displayfeature_aidl-V2-java",
+        "vendor.xiaomi.hw.touchfeature-V1-java",
     ],
 }
