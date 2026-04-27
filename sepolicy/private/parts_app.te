@@ -3,5 +3,13 @@ typeattribute parts_app mlstrustedsubject;
 
 app_domain(parts_app)
 
+allow parts_app activity_service:service_manager find;
+allow parts_app activity_task_service:service_manager find;
+allow parts_app audio_service:service_manager find;
+allow parts_app netstats_service:service_manager find;
 allow parts_app vendor_hal_displayfeature_xiaomi_service:service_manager find;
 binder_call(parts_app, vendor_hal_displayfeature_xiaomi_default)
+
+allow parts_app system_app_data_file:dir create_dir_perms;
+allow parts_app system_app_data_file:file create_file_perms;
+allow parts_app system_app_data_file:lnk_file create_file_perms;

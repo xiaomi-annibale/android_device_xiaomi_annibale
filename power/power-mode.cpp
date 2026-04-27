@@ -5,15 +5,21 @@
  */
 
 #include <aidl/android/hardware/power/BnPower.h>
+#include <aidl/vendor/xiaomi/hw/touchfeature/ITouchFeature.h>
 #include <android-base/file.h>
 #include <android-base/logging.h>
+#include <android/binder_manager.h>
+
+#include <mutex>
 #include <sys/ioctl.h>
 
 #define CMD_DATA_BUF_SIZE 256
 #define COMMON_DATA_CMD 0
 #define SELECT_TOUCH_ID 3
 #define SET_CUR_VALUE 0
+#define TOUCH_ACTIVE_MODE 202
 #define TOUCH_DOUBLETAP_MODE 14
+#define TOUCH_GAME_MODE 0
 #define TOUCH_MAGIC 0x54
 #define TOUCH_DEV_PATH "/dev/xiaomi-touch"
 #define TOUCH_ID 0
@@ -36,12 +42,38 @@ namespace power {
 namespace impl {
 
 using ::aidl::android::hardware::power::Mode;
+using ::aidl::vendor::xiaomi::hw::touchfeature::ITouchFeature;
+
+static std::shared_ptr<ITouchFeature> getTouchFeatureService() {
+  static std::mutex service_mutex;
+  static std::shared_ptr<ITouchFeature> service;
+
+  std::lock_guard<std::mutex> lock(service_mutex);
+  if (service != nullptr) {
+    return service;
+  }
+
+  ndk::SpAIBinder binder(AServiceManager_checkService(
+      "vendor.xiaomi.hw.touchfeature.ITouchFeature/default"));
+  if (!binder.get()) {
+    LOG(ERROR) << "Failed to get touchfeature service";
+    return nullptr;
+  }
+
+  service = ITouchFeature::fromBinder(binder);
+  if (service == nullptr) {
+    LOG(ERROR) << "Failed to convert touchfeature binder to interface";
+  }
+
+  return service;
+}
 
 bool isDeviceSpecificModeSupported(Mode type, bool* _aidl_return) {
     switch (type) {
         case Mode::DOUBLE_TAP_TO_WAKE:
-            *_aidl_return = true;
-            return true;
+        case Mode::GAME:
+          *_aidl_return = true;
+          return true;
         default:
             return false;
     }
@@ -61,6 +93,42 @@ bool setDeviceSpecificMode(Mode type, bool enabled) {
             ioctl(fd, TOUCH_IOC_COMMON_DATA, &data);
             close(fd);
             return true;
+        }
+        case Mode::GAME: {
+          auto touchfeature = getTouchFeatureService();
+          if (touchfeature == nullptr) {
+            return false;
+          }
+
+          int32_t result = 0;
+          const auto gameStatus = touchfeature->setModeValue(
+              TOUCH_ID, TOUCH_GAME_MODE, enabled ? 1 : 0, &result);
+          if (!gameStatus.isOk()) {
+            LOG(ERROR) << "setModeValue failed for GAME: "
+                       << gameStatus.getDescription();
+            return false;
+          }
+
+          if (result < 0) {
+            LOG(ERROR) << "setModeValue returned failure for GAME: " << result;
+            return false;
+          }
+
+          const auto activeStatus = touchfeature->setModeValue(
+              TOUCH_ID, TOUCH_ACTIVE_MODE, enabled ? 1 : 0, &result);
+          if (!activeStatus.isOk()) {
+            LOG(ERROR) << "setModeValue failed for ACTIVE: "
+                       << activeStatus.getDescription();
+            return false;
+          }
+
+          if (result < 0) {
+            LOG(ERROR) << "setModeValue returned failure for ACTIVE: "
+                       << result;
+            return false;
+          }
+
+          return true;
         }
         default:
             return false;

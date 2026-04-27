@@ -4071,7 +4071,6 @@ odm/lib64/libtouchreport_alg_2.so;FIX_SONAME
 odm/lib64/libtouchreport_alg_goodix.so
 odm/lib64/libtouchreport_hal.so
 odm/lib64/libtouchreport_sensor.so
-vendor/lib64/vendor.xiaomi.hw.touchfeature-V1-ndk.so
 
 # Touchscreen
 odm/firmware/annibale_gtp_thp_config.ini
