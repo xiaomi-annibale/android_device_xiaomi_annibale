@@ -93,9 +93,6 @@
 # IR
 /dev/ir_spi u:object_r:ir_spi_device:s0
 
-# Keymint
-/vendor/bin/hw/android\.hardware\.authsecret-service\.nxp u:object_r:hal_authsecret_default_exec:s0
-
 # Media
 /vendor/bin/hw/android\.hardware\.media\.c2-mi-service u:object_r:mediacodec_exec:s0
 
