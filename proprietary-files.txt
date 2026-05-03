@@ -2521,15 +2521,11 @@ vendor/lib64/vendor.display.color@1.5.so
 vendor/lib64/vendor.display.postproc@1.0.so
 
 # Display Calibration
-odm/etc/display/mdss_dsi_p11_42_02_0b_dsc_cmd_bl.json
-odm/etc/display/mdss_dsi_p11_42_0d_0a_dsc_cmd_bl.json
-odm/etc/display/mdss_dsi_p11_42_0d_0a_p10_dsc_cmd_bl.json
 odm/etc/display/qdcm_calib_data_xiaomi_p11_42_02_0b_cmd_mode_dsc_dsi_panel.json
 odm/etc/display/qdcm_calib_data_xiaomi_p11_42_0d_0a_cmd_mode_dsc_dsi_panel.json
 odm/etc/mdss_dsi_p11_42_02_0b_dsc_cmd_mi.xml
 odm/etc/mdss_dsi_p11_42_0d_0a_dsc_cmd_mi.xml
 odm/etc/mdss_dsi_p11_42_0d_0a_p10_dsc_cmd_mi.xml
-vendor/etc/display/xiaomi_o1_38_0c_0b_cmd_mode_dsc_dsi_panel.json
 
 # Display configs
 vendor/etc/display/DPU1010.xml
