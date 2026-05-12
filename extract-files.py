@@ -289,6 +289,8 @@ blob_fixups: blob_fixups_user_type = {
             'libbluetooth_audio_session_aidl.so',
             'libbluetooth_audio_session_aidl_prebuilt.so'
         ),
+    'vendor/lib64/libqcrilNrVoiceModule.so': blob_fixup()
+        .sig_replace('a1 00 80 52 22', 'a1 00 80 52 02'),
     (
         'vendor/lib64/libcapiv2uvvendor.so',
         'vendor/lib64/liblistensoundmodel2vendor.so',
