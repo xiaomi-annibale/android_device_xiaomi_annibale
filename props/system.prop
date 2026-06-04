@@ -1,6 +1,10 @@
 # CNE
 persist.vendor.cne.feature=1
 
+# Device
+ro.product.marketname=POCO F8 Pro
+ro.product.mod_device=annibale_global
+
 # HWUI
 debug.hwui.skia_atrace_enabled=false
 

@@ -94,10 +94,6 @@ ro.camera.enableCamera1MaxZsl=1
 ro.camera.resultFmqSize=4194304
 ro.camerax.extensions.enabled=true
 
-# Device
-ro.product.marketname=POCO F8 Pro
-ro.product.mod_device=annibale_global
-
 # Display
 vendor.display.comp_mask=0
 vendor.display.disable_excl_rect=0
