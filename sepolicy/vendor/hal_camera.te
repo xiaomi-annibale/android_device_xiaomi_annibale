@@ -1,6 +1,7 @@
 type hal_aidlbgservice_service, hal_service_type, protected_service, service_manager_type;
 type hal_camera_aon_service, hal_service_type, protected_service, service_manager_type;
 type hal_dynamic_camera_service, hal_service_type, protected_service, service_manager_type;
+type vendor_intentaware_service, hal_service_type, protected_service, service_manager_type;
 
 typeattribute hal_camera_default hal_postprocservice;
 typeattribute hal_camera_default hal_postprocservice_server;
@@ -17,10 +18,12 @@ allow hal_camera_client hal_aidlbgservice_service:service_manager find;
 allow hal_camera_client hal_camera_aon_service:service_manager find;
 allow hal_camera_client hal_dynamic_camera_service:service_manager find;
 allow hal_camera_client hal_postprocservice_service:service_manager find;
+allow hal_camera_client vendor_intentaware_service:service_manager find;
 allow hal_camera_client hal_quickcamera_service:service_manager find;
 allow hal_camera_default camera_persist_file:dir search;
 allow hal_camera_default camlog_device:chr_file { ioctl open read write };
 allow hal_camera_default hal_dynamic_camera_service:service_manager find;
+allow hal_camera_default vendor_intentaware_service:service_manager { add find };
 allow hal_camera_default migt_dev:chr_file rw_file_perms;
 allow hal_camera_default proc_pressure_cpu:file { getattr open read write };
 allow hal_camera_default proc_pressure_io:file { getattr open read write };
@@ -46,6 +49,7 @@ allow hal_camera_server hal_aidlbgservice_service:service_manager { add find };
 allow hal_camera_server hal_camera_aon_service:service_manager { add find };
 allow hal_camera_server hal_dynamic_camera_service:service_manager { add find };
 allow hal_camera_server hal_postprocservice_service:service_manager { add find };
+allow hal_camera_server vendor_intentaware_service:service_manager { add find };
 allow hal_camera_server hal_quickcamera_service:service_manager { add find };
 allow hal_camera_server vendor_sysfs_xm_power:dir r_dir_perms;
 allow hal_camera_server vendor_sysfs_xm_power:file rw_file_perms;
