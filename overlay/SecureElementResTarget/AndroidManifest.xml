@@ -4,8 +4,8 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.se.overlay.target">
+          package="com.android.se.overlay.target">
     <overlay android:targetPackage="com.android.se"
-                   android:isStatic="true"
-                   android:priority="500"/>
+             android:isStatic="true"
+             android:priority="500" />
 </manifest>

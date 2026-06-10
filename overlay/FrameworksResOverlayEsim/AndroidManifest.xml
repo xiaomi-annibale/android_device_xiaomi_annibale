@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
      SPDX-FileCopyrightText: The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="android.overlay.annibale.global.esim">
+          package="android.overlay.annibale.global.esim">
     <overlay android:targetPackage="android"
-                   android:isStatic="true"
-                   android:priority="1000"
-                   android:requiredSystemPropertyName="ro.boot.hardware.sku"
-                   android:requiredSystemPropertyValue="annibale"/>
+             android:isStatic="true"
+             android:priority="1000"
+             android:requiredSystemPropertyName="ro.boot.hardware.sku"
+             android:requiredSystemPropertyValue="annibale" />
 </manifest>

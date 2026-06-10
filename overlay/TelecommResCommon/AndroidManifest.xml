@@ -4,8 +4,7 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.server.telecom.overlay.common">
-    <overlay
-        android:targetPackage="com.android.server.telecom"
-        android:isStatic="true" />
+          package="com.android.server.telecom.overlay.common">
+    <overlay android:targetPackage="com.android.server.telecom"
+             android:isStatic="true" />
 </manifest>

@@ -3,7 +3,7 @@
      SPDX-FileCopyrightText: The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
     <!-- An array of device capabilities defined by GSMA SGP.22 v2.0.
          The first item is the capability name that the device supports. The second item is the
          major version. The minor and revision versions are default to 0s.
@@ -16,8 +16,11 @@
              eutran : eutranSupportedRelease
              nfc : contactlessSupportedRelease
              crl : rspCrlSupportedVersion
+             nrepc : nrEpcSupportedRelease
+             nr5gc : nr5gcSupportedRelease
+             eutran5gc : eutran5gcSupportedRelease
     -->
-    <string-array name="config_telephonyEuiccDeviceCapabilities">
+    <string-array name="config_telephonyEuiccDeviceCapabilities" translatable="false">
         <item>gsm,8</item>
         <item>utran,9</item>
         <item>eutran,15</item>

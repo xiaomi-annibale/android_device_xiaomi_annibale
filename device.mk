@@ -302,15 +302,13 @@ PRODUCT_PACKAGES += \
     LineageApertureOverlay \
     LineageSDKOverlay \
     LineageSettingsOverlay \
-    NfcOverlay \
+    NfcOverlayAnnibale \
     SecureElementResTarget \
     SettingsResCommon \
-    SettingsResXiaomi \
     SystemUIResCommon \
     TelecommResCommon \
     TelephonyResCommon \
     WifiResCommon \
-    WifiResTarget \
     WifiResTarget_spf
 
 # Partitions
