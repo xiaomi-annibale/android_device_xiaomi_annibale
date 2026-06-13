@@ -20,6 +20,7 @@
 /(vendor|odm)/lib(64)?/libmiphone_capture_bokeh\.so u:object_r:same_process_hal_file:s0
 /data/vendor/aon(/.*)? u:object_r:vendor_aon_vendor_data_file:s0
 /dev/camlog u:object_r:camlog_device:s0
+/dev/mi_cam_sched u:object_r:micam_sched_device:s0
 /mnt/vendor/persist/camera(/.*)? u:object_r:camera_persist_file:s0
 /odm/lib(64)?/libmialgo_utils\.so u:object_r:same_process_hal_file:s0
 /odm/lib(64)?/libmiocr\.so u:object_r:same_process_hal_file:s0
@@ -92,6 +93,9 @@
 /dev/metis u:object_r:migt_dev:s0
 /dev/migt u:object_r:migt_dev:s0
 /sys/module/metis/parameters(/.*)? u:object_r:sysfs_migt:s0
+
+# Miev
+/dev/miev u:object_r:miev_device:s0
 
 # MliPay
 /(odm|vendor/odm|system/vendor)/bin/mlipayd u:object_r:hal_mlipay_default_exec:s0

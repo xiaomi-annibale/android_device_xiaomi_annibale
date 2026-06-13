@@ -1,0 +1,4 @@
+allow platform_app hal_postprocservice_service:service_manager find;
+allow platform_app proc_pressure_cpu:file { getattr open read write };
+allow platform_app proc_pressure_io:file { getattr open read write };
+allow platform_app proc_pressure_mem:file { getattr open read write };

@@ -36,6 +36,9 @@ genfscon sysfs /devices/virtual/xm_power/typec u:object_r:vendor_sysfs_xm_power:
 genfscon sysfs /devices/virtual/xm_power/wireless_master u:object_r:vendor_sysfs_xm_power:s0
 genfscon sysfs /devices/virtual/xm_power u:object_r:vendor_sysfs_xm_power:s0
 
+# Memory
+genfscon proc /mv u:object_r:procfs_memory:s0
+
 # Touchfeature
 genfscon proc /tp_fw_version u:object_r:proc_tp_file:s0
 genfscon proc /tp_lockdown_info u:object_r:proc_tp_lockdown:s0
