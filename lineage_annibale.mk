@@ -13,6 +13,9 @@ $(call inherit-product, device/xiaomi/annibale/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+# Inherit from the MiuiCamera setup
+$(call inherit-product-if-exists, device/xiaomi/annibale-miuicamera/device.mk)
+
 # Lineage stuff
 TARGET_EXCLUDES_AUDIOFX := true
 

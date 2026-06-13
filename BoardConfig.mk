@@ -3,6 +3,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Inherit from proprietary files for miuicamera
+-include device/xiaomi/annibale-miuicamera/BoardConfig.mk
+
 DEVICE_PATH := device/xiaomi/annibale
 
 BUILD_BROKEN_DUP_RULES := true
