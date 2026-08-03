@@ -15,8 +15,6 @@
 #include "UdfpsHandler.h"
 
 #define COMMAND_FOD_PRESS_STATUS 1
-#define COMMAND_FOD_PRESS_X 2
-#define COMMAND_FOD_PRESS_Y 3
 #define PARAM_FOD_PRESSED 1
 #define PARAM_FOD_RELEASED 0
 
@@ -38,17 +36,13 @@ class AnnibaleUdfpsHandler : public UdfpsHandler {
         mDevice = device;
     }
 
-    void onFingerDown(uint32_t x, uint32_t y, float /*minor*/, float /*major*/) {
-        LOG(DEBUG) << __func__ << "x: " << x << ", y: " << y;
-        mDevice->extCmd(mDevice, COMMAND_FOD_PRESS_X, x);
-        mDevice->extCmd(mDevice, COMMAND_FOD_PRESS_Y, y);
+    void onFingerDown(uint32_t /*x*/, uint32_t /*y*/, float /*minor*/, float /*major*/) {
+        LOG(DEBUG) << __func__;
         mDevice->extCmd(mDevice, COMMAND_FOD_PRESS_STATUS, PARAM_FOD_PRESSED);
     }
 
     void onFingerUp() {
         LOG(DEBUG) << __func__;
-        mDevice->extCmd(mDevice, COMMAND_FOD_PRESS_X, 0);
-        mDevice->extCmd(mDevice, COMMAND_FOD_PRESS_Y, 0);
         mDevice->extCmd(mDevice, COMMAND_FOD_PRESS_STATUS, PARAM_FOD_RELEASED);
     }
 
