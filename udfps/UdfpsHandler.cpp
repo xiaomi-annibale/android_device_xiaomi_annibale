@@ -14,6 +14,10 @@
 
 #include "UdfpsHandler.h"
 
+#define COMMAND_NIT 10
+#define PARAM_NIT_FOD 1
+#define PARAM_NIT_NONE 0
+
 #define COMMAND_FOD_PRESS_STATUS 1
 #define PARAM_FOD_PRESSED 1
 #define PARAM_FOD_RELEASED 0
@@ -38,12 +42,12 @@ class AnnibaleUdfpsHandler : public UdfpsHandler {
 
     void onFingerDown(uint32_t /*x*/, uint32_t /*y*/, float /*minor*/, float /*major*/) {
         LOG(DEBUG) << __func__;
-        mDevice->extCmd(mDevice, COMMAND_FOD_PRESS_STATUS, PARAM_FOD_PRESSED);
+        setFingerDown(true);
     }
 
     void onFingerUp() {
         LOG(DEBUG) << __func__;
-        mDevice->extCmd(mDevice, COMMAND_FOD_PRESS_STATUS, PARAM_FOD_RELEASED);
+        setFingerDown(false);
     }
 
     void onAcquired(int32_t result, int32_t vendorCode) {
@@ -59,6 +63,13 @@ class AnnibaleUdfpsHandler : public UdfpsHandler {
 
   private:
     fingerprint_device_t* mDevice;
+
+    void setFingerDown(bool pressed) {
+        if (mDevice) {
+            mDevice->extCmd(mDevice, COMMAND_NIT, pressed ? PARAM_NIT_FOD : PARAM_NIT_NONE);
+            mDevice->extCmd(mDevice, COMMAND_FOD_PRESS_STATUS, pressed ? PARAM_FOD_PRESSED : PARAM_FOD_RELEASED);
+        }
+    }
 };
 
 static UdfpsHandler* create() {
