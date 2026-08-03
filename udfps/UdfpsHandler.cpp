@@ -80,6 +80,8 @@ class AnnibaleUdfpsHandler : public UdfpsHandler {
     void init(fingerprint_device_t* device) {
         mDevice = device;
         touch_fd_ = android::base::unique_fd(open(TOUCH_DEV_PATH, O_RDWR));
+
+        ioctl(touch_fd_.get(), TOUCH_IOC_SELECT_TOUCH_ID, TOUCH_ID);
     }
 
     void onFingerDown(uint32_t /*x*/, uint32_t /*y*/, float /*minor*/, float /*major*/) {
@@ -108,7 +110,6 @@ class AnnibaleUdfpsHandler : public UdfpsHandler {
     android::base::unique_fd touch_fd_;
 
     void setFodStatus(int value) {
-        ioctl(touch_fd_.get(), TOUCH_IOC_SELECT_TOUCH_ID, TOUCH_ID);
         touch_base data = {
             .mode = Touch_Fod_Enable,
             .data_buf = {value},
@@ -117,7 +118,6 @@ class AnnibaleUdfpsHandler : public UdfpsHandler {
     }
 
     void setFingerDown(bool pressed) {
-        ioctl(touch_fd_.get(), TOUCH_IOC_SELECT_TOUCH_ID, TOUCH_ID);
         touch_base data = {
             .mode = THP_FOD_DOWNUP_CTL,
             .data_buf = {pressed ? 1 : 0},
