@@ -268,11 +268,6 @@ blob_fixups: blob_fixups_user_type = {
             'libwfdhdcpservice_annibale.so'
         ),
 
-    (
-        'vendor/etc/media_codecs_sun.xml'
-    ): blob_fixup()
-        .regex_replace('.*media_codecs_(google_audio|google_c2|google_telephony|google_video|vendor_audio).*\n', ''),
-
     'vendor/lib64/android.hardware.bluetooth.audio-impl_prebuilt.so': blob_fixup()
         .replace_needed(
             'libbluetooth_audio_session_aidl.so',
