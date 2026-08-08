@@ -3159,9 +3159,7 @@ vendor/etc/media_sun/video_system_specs.json
 vendor/etc/media_codecs_dolby_audio.xml
 vendor/etc/media_codecs_mi_c2_audio.xml
 vendor/etc/media_codecs_performance_sun.xml
-vendor/etc/media_codecs_performance_sun_vendor_without_dvenc.xml
 vendor/etc/media_codecs_sun.xml
-vendor/etc/media_codecs_sun_vendor_without_dvenc.xml
 vendor/etc/media_profiles_sun.xml
 
 # Micharge
