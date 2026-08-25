@@ -967,6 +967,7 @@ vendor/lib64/libstreamprocessor.so
 vendor/lib64/libsynx.so
 vendor/lib64/libthreadutils.so
 vendor/lib64/libubwcp.so
+vendor/lib64/libui.so:vendor/lib64/libui-xiaomi.so;FIX_SONAME
 vendor/lib64/libultrahdr.so:vendor/lib64/libultrahdr_annibale.so;FIX_SONAME
 vendor/lib64/vendor.xiaomi.hardware.aidl.intentaware-V1-ndk_platform.so
 vendor/lib64/vendor.xiaomi.hardware.aon-V1-ndk.so

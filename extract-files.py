@@ -209,6 +209,15 @@ blob_fixups: blob_fixups_user_type = {
             'libaudioroute_annibale.so'
         ),
 
+    (
+        'odm/lib64/libcom.xiaomi.grallocutils.so',
+        'odm/lib64/libmicamera_hal_core.so',
+    ): blob_fixup()
+        .replace_needed(
+            'libui.so',
+            'libui-xiaomi.so'
+        ),
+
     'system_ext/lib64/libwfdmmsrc_system.so': blob_fixup()
         .add_needed('libgui_shim.so'),
 
@@ -269,7 +278,10 @@ blob_fixups: blob_fixups_user_type = {
             'libtensorflowlite_c_vendor.so',
         ),
 
-    'vendor/lib64/libqcodec2_core.so': blob_fixup()
+    (
+        'vendor/lib64/libqcodec2_core.so',
+        'vendor/lib64/libui-xiaomi.so',
+    ): blob_fixup()
         .replace_needed(
             'android.hardware.graphics.common-V5-ndk.so',
             'android.hardware.graphics.common-V7-ndk.so'
