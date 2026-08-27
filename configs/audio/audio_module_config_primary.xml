@@ -63,7 +63,7 @@ SPDX-License-Identifier: BSD-3-Clause-Clear
             <profile samplingRates="8000 16000 32000 48000" channelLayouts="LAYOUT_MONO LAYOUT_STEREO" formatType="PCM" pcmType="INT_16_BIT" />
         </mixPort>
         <mixPort name="voip_playback" role="source" flags="VOIP_RX">
-            <profile samplingRates="8000 16000 32000 48000" channelLayouts="LAYOUT_STEREO" formatType="PCM" pcmType="INT_16_BIT" />
+            <profile samplingRates="8000 16000 32000 48000" channelLayouts="LAYOUT_MONO LAYOUT_STEREO" formatType="PCM" pcmType="INT_16_BIT" />
         </mixPort>
         <mixPort name="in_call_music" role="source" flags="INCALL_MUSIC">
             <profile samplingRates="8000 16000 32000 48000" channelLayouts="LAYOUT_MONO LAYOUT_STEREO" formatType="PCM" pcmType="INT_16_BIT" />
