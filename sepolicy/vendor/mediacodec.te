@@ -1,0 +1,6 @@
+type vendor_mediacodec_xiaomi_service, service_manager_type;
+
+binder_call(mediacodec, hal_aidl_dms_default)
+
+allow mediacodec hal_aidl_dms_service:service_manager find;
+allow mediacodec vendor_mediacodec_xiaomi_service:service_manager { add find };
