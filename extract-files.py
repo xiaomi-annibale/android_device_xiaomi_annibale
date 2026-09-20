@@ -322,6 +322,22 @@ blob_fixups: blob_fixups_user_type = {
             'android.hardware.graphics.common-V7-ndk.so'
         ),
 
+    (
+        'vendor/lib64/soundfx/libdlbvolaidl.so',
+        'vendor/lib64/soundfx/libhwdapaidl.so',
+        'vendor/lib64/soundfx/liblvacfsprocessingaidl.so',
+        'vendor/lib64/soundfx/libmiwndnsprocessingaidl.so',
+        'vendor/lib64/soundfx/libspatializeraidl.so',
+        'vendor/lib64/soundfx/libswgamedapaidl.so',
+        'vendor/lib64/soundfx/libswspatializeraidl.so',
+        'vendor/lib64/libmisoundfx_aidl_ext.so',
+        'vendor/lib64/libswspatializeraidl_ext.so',
+    ): blob_fixup()
+        .replace_needed(
+            'android.media.audio.common.types-V6-ndk.so',
+            'android.media.audio.common.types-V3-ndk.so'
+        ),
+
     'vendor/lib64/libqcrilNrVoiceModule.so': blob_fixup()
         .sig_replace('a1 00 80 52 22', 'a1 00 80 52 02'),
 
