@@ -604,7 +604,7 @@
 
          @see https://www.w3.org/TR/SVG/paths.html#PathData
          -->
-    <string name="config_mainBuiltInDisplayCutout" translatable="false">M 0.0,0.0 H 136 V 136 H -136 Z</string>
+    <string name="config_mainBuiltInDisplayCutout" translatable="false">M 0,0 H -40.5 V 146 H 40.5 V 0 H 0 Z</string>
 
     <!-- Default files to pin via Pinner Service -->
     <string-array name="config_defaultPinnerServiceFiles" translatable="false">
