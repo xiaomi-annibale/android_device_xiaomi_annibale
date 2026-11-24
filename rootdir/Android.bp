@@ -62,6 +62,7 @@ prebuilt_etc {
     name: "charger_fw_fstab.qti",
     src: "etc/charger_fw_fstab.qti",
     vendor: true,
+    recovery_available: true,
 }
 
 prebuilt_etc {
