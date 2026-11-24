@@ -349,6 +349,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     charger_fw_fstab.qti \
+    charger_fw_fstab.qti.recovery \
     fstab.qcom \
     fw_dir.ueventd.qcom.rc \
     init.annibale.rc \
